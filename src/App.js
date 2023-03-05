@@ -271,8 +271,8 @@ const connectWallet = async () => {
             </div>
             {/* Buttons */}
             <div className="button-group">
-              <a className="btn btn-bordered active smooth-anchor" href=""><i className="icon-rocket mr-2" />Buy Token</a>
-              <a className="btn btn-bordered-white" href=""><i className="icon-note mr-2" />Contract</a>
+              <a className="btn btn-bordered active smooth-anchor" href="https://discountcoin.netlify.app/"><i className="icon-rocket mr-2" />Know about DIS</a>
+              <a className="btn btn-bordered-white" href="https://bscscan.com/address/0xf250a59723cfb438645772203BA262E52DE5Cd13"><i className="icon-note mr-2" />DIS Contract</a>
             </div>
           </div>
         </div>
