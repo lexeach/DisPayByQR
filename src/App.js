@@ -243,7 +243,7 @@ const connectWallet = async () => {
 
 <li className="nav-item ml-2">
   {/* <a style={} href='https://metamask.app.link/dapp/' >go to mobile</a> */}
-  <a  onClick={()=> navigate('/QR')} href="#" className="btn ml-lg-auto btn-bordered-white"><i  />Receive DIS </a>
+  <a  onClick={()=> navigate('/QR')} href="#" className="btn ml-lg-auto btn-bordered-white"><i  />QR code </a>
 </li>
 </ul>
         <ul className="navbar-nav action">
