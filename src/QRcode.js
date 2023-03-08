@@ -9,9 +9,17 @@ import { QRCodeCanvas } from "qrcode.react";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
+import { SwapWidget } from "@1inch/limit-order-protocol";
+
+// import {setup1inchWidget} from '@1inch/embedded-widget';
 
 
 function QR() {
+
+  const [swapData, setSwapData] = useState(null);
+  const [fromTokenAddress, setFromTokenAddress] = useState(null);
+  const [toTokenAddress, setToTokenAddress] = useState(null);
+
 
 const [ QR , setQR ] = useState("");
 const [ connect , setConnect ] = useState("Connect wallet");
@@ -47,20 +55,28 @@ const providerOptions = {
   
   const connectWallet = async () => {
     // if (window.ethereum) {
-      const provider = await web3Modal.connect();
-      const web3 = new Web3(provider);
-      await window.ethereum.send("eth_requestAccounts");
-      const accounts = await web3.eth.getAccounts();
-      const account = accounts[0];
-      setConnect(account.slice(0,4) + "..." + account[0].slice(-2));
-      setQR("https://paydis.netlify.app/?=ref"+ account)
-      console.log(window.location.href.toString() + "?=ref"+ account);
-      console.log("web3model hai ye " ,account);
-      // document.querySelector(".connect").innerHTML = account;
-    // } else {
-    //   // Show alert if Ethereum provider is not detected
-    //   alert("Please install Mask");
-    // }
+
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        await window.ethereum.enable();
+        var accounts = await window.web3.eth.getAccounts();
+    
+        setConnect(accounts[0].slice(0,4) + "..." + accounts[0].slice(-2) );
+        setQR("https://dispayment.netlify.app/?=ref"+ accounts[0])
+      console.log(window.location.href.toString() + "?=ref"+ accounts[0]);
+      // console.log("web3model hai ye " ,account);
+      } else if (window.web3) {
+        window.web3 = new Web3(window.web3.currentProvider);
+      } else {
+        window.alert(
+          "Non-Ethereum browser detected. You should consider trying MetaMask!"
+        );
+      }
+
+
+    
+      
+      
   };
 
 
@@ -87,36 +103,7 @@ const providerOptions = {
 
 <div className="main">
   {/* ***** Header Start ***** */}
-  <header   id="header">
-    {/* Navbar */}
-    <nav style={{backgroundColor :"#090a1a"}} data-aos="zoom-out" data-aos-delay={800} className="navbar gameon-navbar navbar-expand">
-      <div className="container header">
-        {/* Logo */}
-        <a className="navbar-brand" href="/">
-          <img src="/img/logo/logo.png" alt="Brand Logo" />
-        </a>
-        <div className="ml-auto" />
-        {/* Navbar Nav */}
-       
-       
-        {/* Navbar Icons */}
-        {/* Navbar Toggler */}
-        <ul className="navbar-nav toggle">
-          <li className="nav-item">
-            <a href="#" className="nav-link" data-toggle="modal" data-target="#menu">
-              <i className="icon-menu m-0" />
-            </a>
-          </li>
-        </ul>
-        {/* Navbar Action Button */}
-        <ul className="navbar-nav action">
-          <li className="nav-item ml-2">
-            <a onClick={connectWallet} href="#" className="btn ml-lg-auto btn-bordered-white"><i className="icon-wallet mr-md-2" />{connect}</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+
   {/* ***** Header End ***** */}
   {/* ***** Hero Area Start ***** */}
  
@@ -148,13 +135,8 @@ const providerOptions = {
     viewBox={`0 0 256 256`}
     />
 
-{/* <QRCodeCanvas
-      id="qrCode"
-      value={}
-      size={300}
-      bgColor={"#00ff00"}
-      level={"H"}
-    /> */}
+
+
 
 </div>
 
