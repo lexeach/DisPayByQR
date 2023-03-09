@@ -413,16 +413,16 @@ const connectWallet = async () => {
         
       </div>
     </div>
-  </section>
+ // </section>
 
-</div>
-
-
+//</div>
 
 
-    </div>
-  );
-}
+
+
+  //  </div>
+ // );
+//}
 
 
  </section>
