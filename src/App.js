@@ -88,6 +88,77 @@ if(event.target.value == "AUD"){
   )
 }
 
+ if(event.target.value == "PKR"){
+  fetch('https://api.exchangerate.host/latest?base=USDT').then(res => res.json()).then(res => {
+  console.log( 1 /res.rates.PKR); 
+  // console.log(res.rates.EUR);
+  setUsdt(1 / res.rates.PKR);
+
+}
+  )
+}
+
+ if(event.target.value == "BTN"){
+  fetch('https://api.exchangerate.host/latest?base=USDT').then(res => res.json()).then(res => {
+  console.log( 1 /res.rates.BTN); 
+  // console.log(res.rates.EUR);
+  setUsdt(1 / res.rates.BTN);
+
+}
+  )
+}
+
+ if(event.target.value == "LKR"){
+  fetch('https://api.exchangerate.host/latest?base=USDT').then(res => res.json()).then(res => {
+  console.log( 1 /res.rates.LKR); 
+  // console.log(res.rates.EUR);
+  setUsdt(1 / res.rates.LKR);
+
+}
+  )
+}
+
+ if(event.target.value == "AFN"){
+  fetch('https://api.exchangerate.host/latest?base=USDT').then(res => res.json()).then(res => {
+  console.log( 1 /res.rates.AFN); 
+  // console.log(res.rates.EUR);
+  setUsdt(1 / res.rates.AFN);
+
+}
+  )
+}
+
+if(event.target.value == "MMK"){
+  fetch('https://api.exchangerate.host/latest?base=USDT').then(res => res.json()).then(res => {
+  console.log( 1 /res.rates.MMK); 
+  // console.log(res.rates.EUR);
+  setUsdt(1 / res.rates.MMK);
+
+}
+  )
+}
+
+if(event.target.value == "MYR"){
+  fetch('https://api.exchangerate.host/latest?base=USDT').then(res => res.json()).then(res => {
+  console.log( 1 /res.rates.MYR); 
+  // console.log(res.rates.EUR);
+  setUsdt(1 / res.rates.MYR);
+
+}
+  )
+}
+
+ if(event.target.value == "NPR"){
+  fetch('https://api.exchangerate.host/latest?base=USDT').then(res => res.json()).then(res => {
+  console.log( 1 /res.rates.NPR); 
+  // console.log(res.rates.EUR);
+  setUsdt(1 / res.rates.NPR);
+
+}
+  )
+}
+
+ 
 if(event.target.value == "CAD"){
   fetch('https://api.exchangerate.host/latest?base=USDT').then(res => res.json()).then(res => {
   console.log( 1 /res.rates.CAD); 
@@ -307,6 +378,13 @@ const connectWallet = async () => {
             <option value="CNY">CNY</option>
             <option value="AUD">AUD</option>
             <option value="CAD">CAD</option>
+            <option  value="PKR">PKR</option>
+            <option  value="BTN">BTN</option>
+            <option value="LKR">LKR</option>
+            <option value="AFN">AFN</option>
+            <option value="MMK">MMK</option> 
+            <option value="MYR">MYR</option>
+            <option value="NPR">NPR</option>
            
         </select>
 
