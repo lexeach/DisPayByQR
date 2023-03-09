@@ -85,7 +85,7 @@ const providerOptions = {
 
   useEffect(()=>{
 
-    
+    connectWallet();
 
   }, [])
 
