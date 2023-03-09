@@ -413,34 +413,15 @@ const connectWallet = async () => {
         
       </div>
     </div>
- // </section>
-
-//</div>
-
-
-
-
-  //  </div>
- // );
-//}
-
-
  </section>
-    
-    <footer>
-        <div class="cpy-right text-center py-4">
-            <p class="text-white">Stake SLR| 
-                <a href="https://google.com/"> .</a>
-            </p>
-        </div>
-    <div class="cpy-right text-center py-4">
-            <p class="text-white">Swap SLR| 
-                <a href="https://amazon.in/"> .</a>
-            </p>
-        </div>
-    </footer>
-        </div>
-    );
+
+</div>
+
+
+
+
+    </div>
+  );
 }
 
 
