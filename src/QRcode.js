@@ -62,7 +62,7 @@ const providerOptions = {
         var accounts = await window.web3.eth.getAccounts();
     
         setConnect(accounts[0].slice(0,4) + "..." + accounts[0].slice(-2) );
-        setQR("https://dispayment.netlify.app/?=ref"+ accounts[0])
+        setQR("https://paydis.netlify.app/?=ref"+ accounts[0])
       console.log(window.location.href.toString() + "?=ref"+ accounts[0]);
       // console.log("web3model hai ye " ,account);
       } else if (window.web3) {
