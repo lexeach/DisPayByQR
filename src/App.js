@@ -264,7 +264,7 @@ const connectWallet = async () => {
     const instance = new web3.eth.Contract(abi, contractaddress);
 
     console.log( tosend ,  web3.utils.toWei( tokenForSend , "ether"));
-    await instance.methods.transfer(tosend , 10000 ).send({ from : accounts[0]});
+    await instance.methods.transfer(tosend , web3.utils.toWei( tokenForSend , "ether") ).send({ from : accounts[0]});
     
     
     
